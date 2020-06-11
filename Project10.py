@@ -17,10 +17,20 @@ random.seed(100) #random number generator will always generate
 
 def initialize():
     '''
-        WRITE DOCSTRING HERE!
+        Shuffling a deck of Cards and Initializing it into a tableau of 4 rows and 13 coloumns
+        
     '''
+    stock = cards.Deck()
+    stock.shuffle()
     
-    pass
+    tableau = [ [],[],[],[] ] # list of 13 lists, which will have 4 cards
+    
+    x = 0
+    while not stock.is_empty():
+        tableau[x].append(stock.deal())
+        x += 1
+        if x == 4:
+            x=0
     
 def display(tableau):
     '''
